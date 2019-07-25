@@ -5,9 +5,95 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5e1da;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.NavBarMain {
+  /* background-image: url(./images/tn.png); */
+  background-color: #f5e1da;
+  background-size: contain, cover;
+  /* height: 750px; */
+  width: 100%;
+  margin: 0%;
+  padding: 5%;
+}
+
+.TnMain {
+  width: 100%;
+  background-image: url(./images/tn.png);
+  background-size: contain, cover;
+  height: 700px;
+  padding: 25%;
+}
+
+.NavLink {
+  color: #085f63;
+}
+
+.NavLink:visited {
+  color: #49beb7;
+}
+
+.NavLink:hover {
+  color: #f1f1f1;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 5%;
+  margin-right: 30%;
+}
+
+.HelloMain {
+  background-image: url(./images/hello.png);
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 25%;
+}
+
+.Heading1 {
+  color: #49beb7;
+  font-weight: 900;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.Heading2 {
+  color: #49beb7;
+  /* font-weight: 600; */
+  vertical-align: middle;
+  text-align: center;
+}
+
+.Foot {
+  text-align: center;
+  margin: 3%;
+}
+
+.MB {
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: center;
+}
+
+.MessageMe {
+  height: 200px;
+  overflow: auto;
+}
+
+.MessageBox {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-color: #085f63;
 }
