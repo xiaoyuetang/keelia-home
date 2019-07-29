@@ -28,7 +28,7 @@ class MessageBoard extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:4000/todos/")
+      .get("https://keelia-home-backend.herokuapp.com/todos/")
       .then(response => {
         this.setState({ messages: response.data });
       })
@@ -40,7 +40,7 @@ class MessageBoard extends Component {
   toggleModal(event) {
     this.setState({ open: !this.state.open });
     axios
-      .get("http://localhost:4000/todos/")
+      .get("https://keelia-home-backend.herokuapp.com/todos/")
       .then(response => {
         this.setState({ messages: response.data });
       })
@@ -48,7 +48,7 @@ class MessageBoard extends Component {
         console.log(error);
       });
   }
-  
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -61,7 +61,7 @@ class MessageBoard extends Component {
     };
 
     axios
-      .post("http://localhost:4000/todos/add", newMessage)
+      .post("https://keelia-home-backend.herokuapp.com/todos/add", newMessage)
       .then(res => console.log(res.data));
 
     this.setState({
