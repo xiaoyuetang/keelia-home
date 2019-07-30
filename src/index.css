@@ -95,5 +95,15 @@ code {
   margin-bottom: 10%;
   margin-left: 10%;
   margin-right: 10%;
-  border-color: #085f63;
+}
+
+.sMB {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background-color: #f1f1f1;
+  width: 1000px;
+}
+
+.deleteBut {
+  float: right;
 }

@@ -21,10 +21,17 @@ import MessageBox from "./MessageBox";
 class MessageBoard extends Component {
   constructor(props) {
     super(props);
-    this.state = { open: false, name: "", message: "", messages: [] };
+    this.state = {
+      open: false,
+      name: "",
+      message: "",
+      messages: [],
+      time: new Date()
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.myDivToFocus = React.createRef();
   }
   componentDidMount() {
     axios
@@ -47,6 +54,13 @@ class MessageBoard extends Component {
       .catch(function(error) {
         console.log(error);
       });
+    //.current is verification that your element has rendered
+    if (this.myDivToFocus.current) {
+      this.myDivToFocus.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
   }
 
   handleSubmit(event) {
@@ -55,9 +69,12 @@ class MessageBoard extends Component {
     console.log("submitted!");
     console.log(`name: ${this.state.name}`);
     console.log(`message: ${this.state.message}`);
+    console.log(`message: ${this.state.time}`);
+
     const newMessage = {
       name: this.state.name,
-      message: this.state.message
+      message: this.state.message,
+      time: this.state.time
     };
 
     axios
@@ -66,7 +83,8 @@ class MessageBoard extends Component {
 
     this.setState({
       name: "",
-      message: ""
+      message: "",
+      time: new Date()
     });
   }
 
@@ -86,7 +104,7 @@ class MessageBoard extends Component {
             <FormGroup>
               <label htmlFor="#username">Who are you 🤔</label>
               <FormInput
-                id="#username"
+                id="username"
                 name="name"
                 placeholder="Your Name"
                 onChange={this.handleChange}
@@ -113,21 +131,13 @@ class MessageBoard extends Component {
             <ModalBody>You have just sent me a message!</ModalBody>
           </Modal>
         </div>
-        <div className="MessageBox">
-          <ListGroup>
-            <ListGroupItemHeading>
-              <Container>
-                <Row>
-                  <Col>
-                    <h3 className="Heading1">Message Board</h3>
-                  </Col>
-                </Row>
-              </Container>
-            </ListGroupItemHeading>
+        <div className="MessageBox" ref={this.myDivToFocus}>
+          <h3 className="Heading1">Message Board</h3>
+          <div>
             {this.state.messages.map(messages => {
               return <MessageBox messages={messages} />;
             })}
-          </ListGroup>
+          </div>
         </div>
       </Container>
     );
