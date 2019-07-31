@@ -13,14 +13,14 @@ import {
   ModalHeader,
   Fade
 } from "shards-react";
-import { Alert } from "react-bootstrap";
+import { Alert, Toast } from "react-bootstrap";
 import axios from "axios";
 import Moment from "react-moment";
 
 class MessageBox extends Component {
   constructor(props) {
     super(props);
-    this.state = { open: false, openM: false, visible: true };
+    this.state = { open: false, openM: false, showA: true };
 
     this.toggleTooltip = this.toggleTooltip.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -34,7 +34,7 @@ class MessageBox extends Component {
   handleDelete(e) {
     this.setState({
       openM: !this.state.openM,
-      visible: false
+      showA: false
     });
     axios
       .delete(
@@ -53,34 +53,26 @@ class MessageBox extends Component {
       <div>
         <Container>
           <Row>
-            <Fade className="sMB" in={this.state.visible}>
-              <Alert>
-                <Alert.Heading>{this.props.messages.name}:</Alert.Heading>
-                <p>{this.props.messages.message}</p>
-                <hr />
-                <p className="mb-0">
+            <Toast
+              className="sMB"
+              show={this.state.showA}
+              onClose={this.handleDelete}
+            >
+              <Toast.Header>
+                <img
+                  src="holder.js/20x20?text=%20"
+                  className="rounded mr-2"
+                  alt=""
+                />
+                <strong className="mr-auto">{this.props.messages.name}:</strong>
+                <small>
                   <Moment fromNow>{this.props.messages.time}</Moment>
-                  <Button
-                    theme="light"
-                    size="sm"
-                    id="delete"
-                    onClick={this.handleDelete}
-                    className="deleteBut"
-                  >
-                    ❌
-                  </Button>
-                </p>
-              </Alert>
-            </Fade>
+                </small>
+              </Toast.Header>
+              <Toast.Body>{this.props.messages.message}</Toast.Body>
+            </Toast>
           </Row>
         </Container>
-        <Tooltip
-          open={this.state.open}
-          target="#delete"
-          toggle={this.toggleTooltip}
-        >
-          😁 click here to delete
-        </Tooltip>
         <Modal open={this.state.openM} toggle={this.handleDelete}>
           <ModalHeader>👋 Hello there!</ModalHeader>
           <ModalBody>Message has been successfully deleted!</ModalBody>

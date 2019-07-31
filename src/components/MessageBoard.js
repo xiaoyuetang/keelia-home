@@ -99,46 +99,53 @@ class MessageBoard extends Component {
   render() {
     return (
       <Container>
-        <div className="MB">
-          <Form onSubmit={this.handleSubmit}>
-            <FormGroup>
-              <label htmlFor="#username">Who are you 🤔</label>
-              <FormInput
-                id="username"
-                name="name"
-                placeholder="Your Name"
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-            {/* <FormGroup>
-            <label htmlFor="#email">Your email 📧</label>
-            <FormInput id="#email" placeholder="Your Email" />
-          </FormGroup> */}
-            <FormGroup>
-              <label htmlFor="#password">Leave me a message here!</label>
-              <FormTextarea
-                calssName="MessageMe"
-                name="message"
-                onChange={this.handleChange}
-              />
-            </FormGroup>
-            <Button type="submit" theme="secondary" onClick={this.toggleModal}>
-              Submit
-            </Button>
-          </Form>
-          <Modal open={this.state.open} toggle={this.toggleModal}>
-            <ModalHeader>👋 Hello there!</ModalHeader>
-            <ModalBody>You have just sent me a message!</ModalBody>
-          </Modal>
-        </div>
-        <div className="MessageBox" ref={this.myDivToFocus}>
-          <h3 className="Heading1">Message Board</h3>
-          <div>
-            {this.state.messages.map(messages => {
-              return <MessageBox messages={messages} />;
-            })}
-          </div>
-        </div>
+        <Row>
+          <Col>
+            <div className="MB">
+              <Form onSubmit={this.handleSubmit}>
+                <h3 className="Heading1">Contact Form</h3>
+                <FormGroup>
+                  <label htmlFor="#username">Who are you 🤔</label>
+                  <FormInput
+                    id="username"
+                    name="name"
+                    placeholder="Your Name"
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <label htmlFor="#password">Leave me a message here!</label>
+                  <FormTextarea
+                    calssName="MessageMe"
+                    name="message"
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <Button
+                  type="submit"
+                  theme="secondary"
+                  onClick={this.toggleModal}
+                >
+                  Submit
+                </Button>
+              </Form>
+              <Modal open={this.state.open} toggle={this.toggleModal}>
+                <ModalHeader>👋 Hello there!</ModalHeader>
+                <ModalBody>You have just sent me a message!</ModalBody>
+              </Modal>
+            </div>
+          </Col>
+          <Col>
+            <div className="MessageBox" ref={this.myDivToFocus}>
+              <h3 className="Heading1">Message Board</h3>
+              <div>
+                {this.state.messages.map(messages => {
+                  return <MessageBox messages={messages} />;
+                })}
+              </div>
+            </div>
+          </Col>
+        </Row>
       </Container>
     );
   }

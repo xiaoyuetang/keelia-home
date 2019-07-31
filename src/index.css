@@ -79,10 +79,11 @@ code {
 }
 
 .MB {
-  margin-top: 5%;
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .MessageMe {
@@ -98,10 +99,9 @@ code {
 }
 
 .sMB {
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin: 1% auto;
   background-color: #f1f1f1;
-  width: 1000px;
+  width: 1500px;
 }
 
 .deleteBut {
