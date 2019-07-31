@@ -9,7 +9,7 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <Navbar expand="lg">
+      <Navbar>
         <Navbar.Brand href="/">
           <img className="logo" src={logo} alr="logo" />
         </Navbar.Brand>

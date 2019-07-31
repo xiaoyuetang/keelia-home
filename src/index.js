@@ -37,7 +37,7 @@ const routing = (
         </Switch>
       </Router>
     </MediaQuery>
-    <MediaQuery query="(max-device-width: 768px)">
+    <MediaQuery query="(max-device-width: 767px)">
       <Router>
         <NavBarM />
         <Switch>
