@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MessageBoard from "../components/MessageBoard";
+import FootBar from "../components/FootBar";
 
 class ContactMe extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class ContactMe extends Component {
     return (
       <div>
         <MessageBoard />
+        <hr />
+        <FootBar />
       </div>
     );
   }

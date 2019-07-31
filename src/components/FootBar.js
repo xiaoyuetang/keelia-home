@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Badge } from "shards-react";
-// import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bootstrap";
 
 class FootBar extends Component {
   constructor(props) {
@@ -9,9 +8,17 @@ class FootBar extends Component {
   render() {
     return (
       <div className="Foot">
-        <Badge pill theme="secondary">
+        <Button
+          onClick={() =>
+            window.open(
+              "https://instagram.com/xiaoyuekeelia_?igshid=71d2hkqdi96w",
+              "_blank"
+            )
+          }
+          variant="outline-secondary"
+        >
           FIND ME IN INS
-        </Badge>
+        </Button>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FootBar from "../components/FootBar";
 
 class MyWork extends Component {
   constructor(props) {
@@ -8,6 +9,8 @@ class MyWork extends Component {
     return (
       <div>
         <h1 className="Heading1">Waiting to be updated...</h1>
+        <hr />
+        <FootBar />
       </div>
     );
   }
