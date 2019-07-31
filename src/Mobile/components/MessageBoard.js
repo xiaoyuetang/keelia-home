@@ -99,7 +99,7 @@ class MessageBoard extends Component {
   render() {
     return (
       <Container>
-        <div className="ContactForm">
+        <div className="ContactFormM">
           <Form onSubmit={this.handleSubmit}>
             <h3 className="Heading1">Contact Form</h3>
             <FormGroup>
@@ -128,9 +128,9 @@ class MessageBoard extends Component {
             <ModalBody>You have just sent me a message!</ModalBody>
           </Modal>
         </div>
-        <div className="MessageBoard" ref={this.myDivToFocus}>
+        <div ref={this.myDivToFocus}>
           <h3 className="Heading1">Message Board</h3>
-          <div className="ScrollableBox">
+          <div>
             {this.state.messages.map(messages => {
               return <MessageBox messages={messages} />;
             })}
