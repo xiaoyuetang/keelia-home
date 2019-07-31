@@ -78,7 +78,7 @@ code {
   margin: 3%;
 }
 
-.MB {
+.ContactForm {
   margin: 10% 10%;
   text-align: center;
 }
@@ -88,13 +88,16 @@ code {
   overflow: auto;
 }
 
-.MessageBox {
+.MessageBoard {
   margin: 10% auto;
-  height: 300px;
+}
+
+.ScrollableBox {
+  height: 250px;
   overflow: scroll;
 }
 
-.sMB {
+.MessageBox {
   margin: 1% auto;
   background-color: #f1f1f1;
   width: 1500px;

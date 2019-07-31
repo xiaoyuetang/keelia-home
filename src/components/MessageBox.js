@@ -54,7 +54,7 @@ class MessageBox extends Component {
         <Container>
           <Row>
             <Toast
-              className="sMB"
+              className="MessageBox"
               show={this.state.showA}
               onClose={this.handleDelete}
             >
