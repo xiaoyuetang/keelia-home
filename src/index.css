@@ -79,11 +79,8 @@ code {
 }
 
 .MB {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin: 10% 10%;
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .MessageMe {
@@ -92,10 +89,7 @@ code {
 }
 
 .MessageBox {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 10% auto;
 }
 
 .sMB {
