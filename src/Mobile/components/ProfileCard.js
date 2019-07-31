@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Image } from "react-bootstrap";
-import icon from "../images/icon.png";
+import icon from "../../images/icon.png";
 
 class ProfileCard extends Component {
   constructor(props) {

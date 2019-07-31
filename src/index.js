@@ -9,26 +9,47 @@ import "shards-ui/dist/css/shards.min.css";
 import MediaQuery from "react-responsive";
 import "./index.css";
 
-import NavBar from "./components/NavBar";
-import MainPage from "./pages/MainPage";
-import ContactMe from "./pages/ContactMe";
-import MyWork from "./pages/MyWork";
-import AboutMe from "./pages/AboutMe";
-import Blog from "./pages/Blog";
+import NavBar from "./Web/components/NavBar";
+import MainPage from "./Web/pages/MainPage";
+import ContactMe from "./Web/pages/ContactMe";
+import MyWork from "./Web/pages/MyWork";
+import AboutMe from "./Web/pages/AboutMe";
+import Blog from "./Web/pages/Blog";
+
+import NavBarM from "./Mobile/components/NavBar";
+import MainPageM from "./Mobile/pages/MainPage";
+import ContactMeM from "./Mobile/pages/ContactMe";
+import MyWorkM from "./Mobile/pages/MyWork";
+import AboutMeM from "./Mobile/pages/AboutMe";
+import BlogM from "./Mobile/pages/Blog";
 
 const routing = (
-  <MediaQuery query="(min-device-width: 1224px)" orientation="landscape">
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="/contactme" component={ContactMe} />
-        <Route path="/mywork" component={MyWork} />
-        <Route path="/aboutme" component={AboutMe} />
-        <Route path="/blog" component={Blog} />
-      </Switch>
-    </Router>
-  </MediaQuery>
+  <div>
+    <MediaQuery query="(min-device-width: 768px)" orientation="landscape">
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/contactme" component={ContactMe} />
+          <Route path="/mywork" component={MyWork} />
+          <Route path="/aboutme" component={AboutMe} />
+          <Route path="/blog" component={Blog} />
+        </Switch>
+      </Router>
+    </MediaQuery>
+    <MediaQuery query="(max-device-width: 768px)">
+      <Router>
+        <NavBarM />
+        <Switch>
+          <Route exact path="/" component={MainPageM} />
+          <Route path="/contactme" component={ContactMeM} />
+          <Route path="/mywork" component={MyWorkM} />
+          <Route path="/aboutme" component={AboutMeM} />
+          <Route path="/blog" component={BlogM} />
+        </Switch>
+      </Router>
+    </MediaQuery>
+  </div>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));

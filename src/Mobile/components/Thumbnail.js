@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import tn from "../images/tn.png";
+import tn from "../../images/tn.png";
 class Thumbnail extends Component {
   constructor(props) {
     super(props);
