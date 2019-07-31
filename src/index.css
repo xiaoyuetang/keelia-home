@@ -90,6 +90,8 @@ code {
 
 .MessageBox {
   margin: 10% auto;
+  height: 300px;
+  overflow: scroll;
 }
 
 .sMB {
